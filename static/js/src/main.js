@@ -177,6 +177,11 @@ Annotator.prototype = {
             // Update the visualization type and the feedback type and load in the new audio clip
             my.wavesurfer.params.visualization = my.currentTask.visualization; // invisible, spectrogram, waveform
             my.wavesurfer.params.feedback = my.currentTask.feedback; // hiddenImage, silent, notify, none 
+            var start = Date.now();
+            my.wavesurfer.on('ready', function () {
+                var end = Date.now();
+                console.log(end - start);
+            });
             my.wavesurfer.load(my.currentTask.url);
         };
 
@@ -271,10 +276,12 @@ Annotator.prototype = {
 
 };
 
+
 function main() {
     // Create all the components
     var annotator = new Annotator();
     // Load the first audio annotation task
     annotator.loadNextTask();
+    return annotator;
 }
-main();
+var a = main();

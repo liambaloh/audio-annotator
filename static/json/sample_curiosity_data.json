@@ -4,8 +4,8 @@
         "visualization": "spectrogram",
         "proximityTag": [],
         "annotationTag": ["bicycle bell", "church bell", "human voice", "mechanical squeak", "music", "screeching train wheels", "single footstep", "siren", "vehicle brakes", "vehicle engine", "vehicle honk"],
-        "annotationSolutionsUrl": "/static/json/paris.json",
-        "imgUrl": "/static/img/paris.jpg",
-        "url": "/static/wav/paris.wav"
+        "annotationSolutionsUrl": "/audio-annotator/static/json/paris.json",
+        "imgUrl": "/audio-annotator/static/img/paris.jpg",
+        "url": "/audio-annotator/static/wav/AudioTracks/ww - 2min.wav"
     }
 }

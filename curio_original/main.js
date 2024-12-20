@@ -393,5 +393,6 @@ function main() {
     var annotator = new Annotator();
     // Load the first audio annotation task
     annotator.loadNextTask();
+    return annotator;
 }
-main();
+var a = main();

@@ -4,6 +4,9 @@
 
 'use strict';
 
+var iA;
+var iB;
+
 /**
  * Purpose: 
  *   Add methods getFrequencyRGB, getFrequencies, resample, drawSpectrogram 
@@ -115,15 +118,15 @@ WaveSurfer.util.extend(WaveSurfer.Drawer.Canvas, {
         var pixelRatio = this.params.pixelRatio;
         var length = buffer.duration;
         var height = (this.params.fftSamples / 2) * pixelRatio;
-        var frequenciesData = this.getFrequencies(buffer);
+        iA = this.getFrequencies(buffer);
 
-        var pixels = this.resample(frequenciesData);
+        iB = this.resample(iA);
 
         var heightFactor = pixelRatio;
 
-        for (var i = 0; i < pixels.length; i++) {
-            for (var j = 0; j < pixels[i].length; j++) {
-                this.waveCc.fillStyle = this.getFrequencyRGB(pixels[i][j]);
+        for (var i = 0; i < iB.length; i++) {
+            for (var j = 0; j < iB[i].length; j++) {
+                this.waveCc.fillStyle = this.getFrequencyRGB(iB[i][j]);
                 this.waveCc.fillRect(i, height - j * heightFactor, 1, heightFactor);
             }
         }
